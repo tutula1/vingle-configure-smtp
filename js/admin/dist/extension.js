@@ -36,14 +36,22 @@ System.register('vingle/configure/smtp/components/ConfigureSMTPSettingModal', ['
                 null,
                 ' Mail Driver '
               ),
-              ' ',
-              m('input', { className: 'FormControl',
-                bidi: this.setting('mail_driver')
-              }),
-              'null '
-            ),
-            
+              m(
+                'select',
+                { className: 'FormControl', bidi: this.setting('mail_driver') },
                 m(
+                  'option',
+                  { value: 'smtp' },
+                  'smtp'
+                ),
+                m(
+                  'option',
+                  { value: 'mail' },
+                  'mail'
+                )
+              ),
+              'smtp'
+            ), m(
               'div',
               { className: 'Form-group' },
               m(
@@ -56,10 +64,7 @@ System.register('vingle/configure/smtp/components/ConfigureSMTPSettingModal', ['
                 bidi: this.setting('mail_encryption')
               }),
               'null '
-            ), 
-            
-            
-              m(
+            ), m(
               'div',
               { className: 'Form-group' },
               m(
@@ -99,7 +104,7 @@ System.register('vingle/configure/smtp/components/ConfigureSMTPSettingModal', ['
               m('input', { className: 'FormControl',
                 bidi: this.setting('mail_username')
               }),
-              'smtp@ flarum.org '
+              'smtp@flarum.org '
             ), m(
               'div',
               { className: 'Form-group' },

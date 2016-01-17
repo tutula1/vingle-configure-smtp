@@ -10,13 +10,15 @@ export default class ConfigureSMTPSettingModal extends SettingsModal {
   }
 
   form() {
-    return [ < div className = "Form-group" >
-      < label > Mail Driver < /label> < input className = "FormControl"
-      bidi = {
-        this.setting('mail_driver')
-      }
-      />
-      smtp < /div>,
+    return [ 
+    < div className = "Form-group" >
+        < label > Mail Driver < /label>
+        < select className = "FormControl" bidi = {  this.setting('mail_driver') } >
+            <option value='smtp'>smtp</option>
+            <option value='mail'>mail</option>
+        </select>
+    smtp
+    < /div>,
       
       < div className = "Form-group" >
       < label > Mail Encryption < /label> < input className = "FormControl"
