@@ -23,11 +23,12 @@ export default class ConfigureSMTPSettingModal extends SettingsModal {
 
             <div className = "Form-group">
                 <label> Mail Encryption </label>
-                <input
-                    className = "FormControl"
-                    bidi = {this.setting('mail_encryption')}
-                />
-                null
+                <select className = "FormControl" bidi = {this.setting('mail_encryption')}>
+                    <option value='tls'>tls</option>
+                    <option value='ssl'>ssl</option>
+                    <option value='null'>null</option>
+                </select>
+                tls
             </div>,
 
             <div className = "Form-group">

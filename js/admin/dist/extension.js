@@ -59,12 +59,27 @@ System.register('vingle/configure/smtp/components/ConfigureSMTPSettingModal', ['
                                 null,
                                 ' Mail Encryption '
                             ),
-                            m('input', {
-                                className: 'FormControl',
-                                bidi: this.setting('mail_encryption')
-                            }),
-                            'null'
-                        ), m(
+                            m(
+                                'select', 
+                                { className: 'FormControl', bidi: this.setting('mail_encryption') },
+                                m(
+                                    'option',
+                                    { value: 'tls' },
+                                    'tls'
+                                ),
+                                m(
+                                    'option',
+                                    { value: 'ssl' },
+                                    'ssl'
+                                ),
+                                m(
+                                    'option',
+                                    { value: 'null' },
+                                    'null'
+                                )
+                            ),
+                            'tls'
+                          ), m(
                             'div',
                             { className: 'Form-group' },
                             m(
